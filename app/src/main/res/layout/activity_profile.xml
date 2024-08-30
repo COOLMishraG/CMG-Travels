@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1C1678"
     tools:context=".Profile">
 
     <androidx.appcompat.widget.Toolbar
@@ -42,7 +43,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#1C1678">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,7 +60,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="Modify Ticket"
+                    android:text="📝Modify Ticket"
                     android:textColor="#1C1678"
                     android:textSize="18sp" />
 
@@ -74,7 +76,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="Previous Booking / History"
+                    android:text="🕒Previous Booking / History"
                     android:textColor="#1C1678"
                     android:textSize="18sp" />
 
@@ -90,7 +92,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="Write Feedback"
+                    android:text="🖊️Write Feedback"
                     android:textColor="#1C1678"
                     android:textSize="18sp" />
 
@@ -106,7 +108,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="Rate This App"
+                    android:text="⭐Rate This App"
                     android:textColor="#1C1678"
                     android:textSize="18sp" />
 
@@ -122,7 +124,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="Share This App"
+                    android:text="🔗Share This App"
                     android:textColor="#1C1678"
                     android:textSize="18sp" />
 
@@ -230,30 +232,32 @@
         android:id="@+id/bottomNavBar"
         android:layout_width="0dp"
         android:layout_height="72dp"
-        android:orientation="horizontal"
         android:background="#FFFFFF"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/bookingButton"
+            android:id="@+id/bookingButton1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
             android:text="Booking"
             android:textColor="#1C1678"
-            android:backgroundTint="#FFFFFF" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/profileButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Profile"
-            android:textColor="#FFFFFF"
             android:backgroundTint="#1C1678"
-            android:enabled="false" />
+            android:enabled="false"
+            android:text="Profile"
+            android:textColor="#F4FF7B"
+            android:textSize="24sp" />
 
     </LinearLayout>
 

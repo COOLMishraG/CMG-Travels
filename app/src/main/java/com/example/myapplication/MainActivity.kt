@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         private const val DESTINATION_STATION_REQUEST_CODE = 2
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         binding.profileButton.setOnClickListener {
-        val intent = Intent(this, Profile::class.java)
+         val intent = Intent(this, Profile::class.java)
             startActivity(intent)
             finish()
         }

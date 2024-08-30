@@ -179,19 +179,21 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Booking"
-            android:textColor="#FFFFFF"
             android:backgroundTint="#1C1678"
-            android:enabled="false" />
+            android:enabled="false"
+            android:text="Booking"
+            android:textColor="#F4FF7B"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/profileButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
             android:text="Profile"
             android:textColor="#1C1678"
-            android:backgroundTint="#FFFFFF" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
