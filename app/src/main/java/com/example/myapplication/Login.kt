@@ -1,11 +1,19 @@
 package com.example.myapplication
 
+import android.os.Build.VERSION_CODES.N
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.Network.RetrofitClient
 import com.example.myapplication.databinding.ActivityLoginBinding
+import com.yourpackage.network.ApiService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -23,20 +31,41 @@ class Login : AppCompatActivity() {
 
         // Set up button click listener
         binding.buttonCreateUser.setOnClickListener {
-            createUser()
+            val name = binding.editTextName.text.toString()
+            val phone = binding.editTextPhone.text.toString()
+            val email = binding.editTextEmail.text.toString()
+            val password = binding.editTextPassword.text.toString()
+            val confirmPassword = binding.editTextConfirmPassword.text.toString()
+            val userId = binding.editTextUserId.text.toString()
+            if(name.isEmpty() ||  email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || userId.isEmpty() || phone.isEmpty()){
+                  Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            }else if(password != confirmPassword){
+                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+            }else {
+
+                val TempUSer = User(name, phone.toInt(), email, password, userId)
+                val apiService = RetrofitClient.instance.create(ApiService::class.java)
+                val give = apiService.creteUser(TempUSer)
+
+                give.enqueue(object : Callback<User>{
+                    override fun onResponse(call: Call<User>, response: Response<User>) {
+                        if(response.isSuccessful){
+                            val resUser = response.body()
+                            val userName = resUser?.Name
+                            Toast.makeText(this@Login, "User created successfully $userName", Toast.LENGTH_SHORT).show()
+                        }else {
+                            Toast.makeText(this@Login, "Error: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<User>, t: Throwable) {
+                        Toast.makeText(this@Login, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
+
+            }
         }
     }
 
-    private fun createUser() {
-        // Implement user creation logic here
-        val name = binding.editTextName.text.toString()
-        val phone = binding.editTextPhone.text.toString()
-        val email = binding.editTextEmail.text.toString()
-        val password = binding.editTextPassword.text.toString()
-        val confirmPassword = binding.editTextConfirmPassword.text.toString()
-        val userId = binding.editTextUserId.text.toString()
 
-        // Add validation and user creation logic
-        // ...
-    }
 }

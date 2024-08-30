@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.androidx.activity.ktx)  // Or latest version
     implementation (libs.androidx.fragment.ktx)

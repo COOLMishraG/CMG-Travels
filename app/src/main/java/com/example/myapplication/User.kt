@@ -1,9 +1,11 @@
 package com.example.myapplication
 
 data class User(
-    val name: String,
-    val phone: String,
+    val Name: String,
+    val Phone: Number,
     val email: String,
     val password: String,
-    val userId: String
+    val UserId: String,
+    val PNRs: MutableList<Number>? = null,
+
 )
