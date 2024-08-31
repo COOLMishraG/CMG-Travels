@@ -16,8 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        
-        <!-- Existing activities -->
+        <activity
+            android:name=".ProfilePack.ContactUs"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilePack.TermsAndConditions"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilePack.PrivacyPolicy"
+            android:exported="false" /> <!-- Existing activities -->
         <activity
             android:name=".ProfilePack.CancellationPolicy"
             android:exported="false" />
@@ -50,21 +57,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        
-        <!-- New activities -->
+        </activity> <!-- New activities -->
         <activity
             android:name=".ProfilePack.Offers"
             android:exported="false" />
         <activity
             android:name=".ProfilePack.RightFeedback"
-            android:label="Right Feedback"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Right Feedback" />
         <activity
             android:name=".ProfilePack.RateThisApp"
-            android:label="Rate This App"
-            android:theme="@style/AppTheme.NoActionBar" />
-       
+            android:label="Rate This App" />
     </application>
 
 </manifest>

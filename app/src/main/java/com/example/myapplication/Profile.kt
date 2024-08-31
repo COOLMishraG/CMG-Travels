@@ -7,15 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.ProfilePack.ModifiyTicket
+import com.example.myapplication.ProfilePack.RateThisApp
+import com.example.myapplication.ProfilePack.RightFeedback
 import com.example.myapplication.databinding.ActivityProfileBinding
 
 class Profile : AppCompatActivity() {
-    val binding : ActivityProfileBinding by lazy {
-        ActivityProfileBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityProfileBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -43,40 +45,39 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
-        binding.offers.setOnClickListener {
-            startActivity(Intent(this, Offers::class.java))
+        binding.rateApp.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.RateThisApp")
+            startActivity(intent)
+            finish()
         }
-
         binding.writeFeedback.setOnClickListener {
-            startActivity(Intent(this, WriteFeedback::class.java))
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.RightFeedback")
+            startActivity(intent)
+            finish()
         }
-
-        binding.readThisApp.setOnClickListener {
-            startActivity(Intent(this, ReadThisApp::class.java))
+        binding.offers.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.Offers")
+            startActivity(intent)
+            finish()
         }
-
-        binding.shareThisApp.setOnClickListener {
-            startActivity(Intent(this, ShareThisApp::class.java))
-        }
-
-        binding.aboutUs.setOnClickListener {
-            startActivity(Intent(this, AboutUs::class.java))
-        }
-
         binding.privacyPolicy.setOnClickListener {
-            startActivity(Intent(this, PrivacyPolicy::class.java))
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.PrivacyPolicy")
+            startActivity(intent)
+            finish()
         }
-
         binding.termsAndConditions.setOnClickListener {
-            startActivity(Intent(this, TermsAndConditions::class.java))
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.TermsAndConditions")
+            startActivity(intent)
+            finish()
         }
 
-        binding.contactUs.setOnClickListener {
-            startActivity(Intent(this, ContactUs::class.java))
-        }
 
-        binding.trackMyBus.setOnClickListener {
-            startActivity(Intent(this, TrackMyBus::class.java))
-        }
+        // Set up click listeners for the new options
+
     }
 }
