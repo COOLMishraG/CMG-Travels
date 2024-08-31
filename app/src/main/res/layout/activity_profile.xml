@@ -31,13 +31,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -53,16 +52,363 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/modifyTicket"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="📝Modify Ticket"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/modifyTicket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="📝 Modify Ticket"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Modify your existing ticket"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/previousBooking"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="🕒 Previous Booking / History"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="View your previous bookings and history"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/writeFeedback"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="🖊️ Write Feedback"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Write feedback about your experience"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/rateApp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="⭐ Rate This App"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Rate our app"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/shareApp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="🔗 Share This App"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Share our app with others"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/aboutUs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="ℹ️ About Us"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Learn more about our company"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/privacyPolicy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="🔒 Privacy Policy"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Read our privacy policy"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cancellationPolicy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="❌ Cancellation Policy"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="View our cancellation policy"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/termsAndConditions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="📄 Terms and Conditions"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Read our terms and conditions"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/contactUs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="📞 Contact Us"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Get in touch with our support team"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#8576FF" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/trackMyBus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="16dp"
+                        android:text="🚌 Track My Bus"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp" 
+                        android:contentDescription="Track the location of your bus"
+                        android:background="?android:attr/selectableItemBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=">"
+                        android:textColor="#1C1678"
+                        android:textSize="18sp"
+                        android:padding="16dp"/>
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -70,159 +416,17 @@
                     android:background="#8576FF" />
 
                 <TextView
-                    android:id="@+id/previousBooking"
+                    android:id="@+id/signOut"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:padding="16dp"
-                    android:text="🕒Previous Booking / History"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/writeFeedback"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="🖊️Write Feedback"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/rateApp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="⭐Rate This App"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/shareApp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="🔗Share This App"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/aboutUs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="About Us"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/privacyPolicy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="Privacy Policy"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/cancellationPolicy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="Cancellation Policy"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/termsAndConditions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="Terms and Conditions"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/contactUs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="Contact Us"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#8576FF" />
-
-                <TextView
-                    android:id="@+id/trackMyBus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="16dp"
-                    android:text="Track My Bus"
-                    android:textColor="#1C1678"
-                    android:textSize="18sp" />
+                    android:text="🚪 Sign Out"
+                    android:textColor="#FF0000"
+                    android:textSize="18sp"
+                    android:background="?android:attr/selectableItemBackground" 
+                    android:contentDescription="Sign out of your account"/>
 
             </LinearLayout>
         </ScrollView>
@@ -246,7 +450,8 @@
             android:backgroundTint="#FFFFFF"
             android:text="Booking"
             android:textColor="#1C1678"
-            android:textSize="24sp" />
+            android:textSize="24sp" 
+            android:contentDescription="Go to booking page"/>
 
         <Button
             android:id="@+id/profileButton"
@@ -257,7 +462,8 @@
             android:enabled="false"
             android:text="Profile"
             android:textColor="#F4FF7B"
-            android:textSize="24sp" />
+            android:textSize="24sp" 
+            android:contentDescription="Currently on profile page"/>
 
     </LinearLayout>
 
