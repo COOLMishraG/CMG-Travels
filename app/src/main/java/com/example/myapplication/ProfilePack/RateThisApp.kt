@@ -20,8 +20,8 @@ class RateThisApp : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) // Hide default title
 
         // Set custom centered title
-        val titleTextView = binding.toolbarTitle
-        titleTextView.text = "Rate This App"
+//        val titleTextView = binding.toolbarTitle
+//        titleTextView.text = "Rate This App"
 
         // Set the status bar color to match the toolbar
         window.statusBarColor = resources.getColor(R.color.dark_blue, theme)
@@ -31,5 +31,9 @@ class RateThisApp : AppCompatActivity() {
             val rating = binding.ratingBar.rating
             // Handle the rating submission here
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

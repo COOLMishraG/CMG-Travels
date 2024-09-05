@@ -17,7 +17,7 @@ class Offers : AppCompatActivity() {
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Offers"
+
 
         // Add your offers logic here
         loadOffers()

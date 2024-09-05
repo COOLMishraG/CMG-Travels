@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         if (selectedStation != null) {
             binding.editTextText2.setText(selectedStation)
         } else {
-            binding.editTextText2.setHint("From: Not Selected")
+            binding.editTextText2.setHint("From")
         }
 
         // Set up Date Selector click listener

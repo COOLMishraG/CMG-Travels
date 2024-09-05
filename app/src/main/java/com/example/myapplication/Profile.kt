@@ -27,19 +27,19 @@ class Profile : AppCompatActivity() {
         binding.bookingButton1.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         binding.modifyTicket.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.ModifiyTicket")
             startActivity(intent)
-            finish()
+
         }
         binding.cancellationPolicy.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.CancellationPolicy")
             startActivity(intent)
-            finish()
+
         }
         binding.signOut.setOnClickListener {
             val intent = Intent(this, Login::class.java)
@@ -49,31 +49,41 @@ class Profile : AppCompatActivity() {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.RateThisApp")
             startActivity(intent)
-            finish()
+
         }
         binding.writeFeedback.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.RightFeedback")
             startActivity(intent)
-            finish()
+
         }
         binding.offers.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.Offers")
             startActivity(intent)
-            finish()
         }
         binding.privacyPolicy.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.PrivacyPolicy")
             startActivity(intent)
-            finish()
+
         }
         binding.termsAndConditions.setOnClickListener {
             val intent = Intent()
             intent.setClassName(this, "com.example.myapplication.ProfilePack.TermsAndConditions")
             startActivity(intent)
-            finish()
+
+        }
+        binding.aboutUs.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.AboutUs")
+            startActivity(intent)
+
+        }
+        binding.contactUs.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.ContactUs")
+            startActivity(intent)
         }
 
 

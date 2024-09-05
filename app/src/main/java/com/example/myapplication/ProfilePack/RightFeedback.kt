@@ -20,10 +20,14 @@ class RightFeedback : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false) // Hide default title
 
         // Set custom centered title
-        val titleTextView = binding.toolbarTitle
-        titleTextView.text = "Write Feedback"
+//        val titleTextView = binding.toolbarTitle
+//        titleTextView.text = "Write Feedback"
 
         // Set the status bar color to match the toolbar
         window.statusBarColor = resources.getColor(R.color.dark_blue, theme)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

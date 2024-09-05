@@ -18,4 +18,8 @@ class TermsAndConditions : AppCompatActivity() {
             insets
         }
     }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

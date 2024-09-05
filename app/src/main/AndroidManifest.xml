@@ -65,6 +65,9 @@
             android:name=".ProfilePack.RightFeedback"
             android:label="Right Feedback" />
         <activity
+            android:name=".ProfilePack.AboutUs"
+            android:label="Right Feedback" />
+        <activity
             android:name=".ProfilePack.RateThisApp"
             android:label="Rate This App" />
     </application>

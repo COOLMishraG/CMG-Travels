@@ -32,7 +32,7 @@ class BusAdapter(
         val ticket = busTickets[position]
         if (matchesFilter(ticket)) {
             holder.route.text = "${ticket.from} to ${ticket.to}"
-            holder.date.text = ticket.date
+
             holder.time.text = "${ticket.departureTime} - ${ticket.arrivalTime}"
             holder.price.text = "₹${ticket.price}"
             holder.itemView.visibility = View.VISIBLE
@@ -43,8 +43,8 @@ class BusAdapter(
 
     private fun matchesFilter(ticket: BusTicket): Boolean {
         return (fromStation == null || ticket.from == fromStation) &&
-               (toStation == null || ticket.to == toStation) &&
-               (selectedDate == null || ticket.date == selectedDate)
+               (toStation == null || ticket.to == toStation)
+
     }
 
     override fun getItemCount() = busTickets.size
