@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C1678"
+    android:background="#679fc8"
     tools:context=".Boarding">
 
     <!-- Title -->
@@ -13,14 +13,14 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Station Finder"
-        android:textSize="24sp"
-        android:textColor="#A3FFD6"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Select Station"
+        android:textColor="#0D0A31"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Search bar for filtering the stations -->
     <androidx.cardview.widget.CardView
@@ -65,9 +65,10 @@
             android:id="@+id/listViewStations"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:cacheColorHint="#000000"
             android:divider="#7BC9FF"
-            android:dividerHeight="1dp"
-            android:background="#FFFFFF"/>
+            android:dividerHeight="1dp" />
 
     </androidx.cardview.widget.CardView>
 

@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.Network.RetrofitClient
 import com.example.myapplication.databinding.ActivityNewMainBinding
+import com.google.gson.Gson
 import com.yourpackage.network.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -45,6 +46,15 @@ class NewMainActivity : AppCompatActivity() {
                             Toast.makeText(this@NewMainActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
                         }else {
                             val intent = Intent(this@NewMainActivity, MainActivity::class.java)
+                            UserSession.user = resUser
+                            UserSession.isLoggedIn = true
+
+                            val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            val gson = Gson()
+                            val userJson = gson.toJson(resUser)
+                            editor.putString("user", userJson)
+                            editor.apply()
                             startActivity(intent)
                         }
                     }

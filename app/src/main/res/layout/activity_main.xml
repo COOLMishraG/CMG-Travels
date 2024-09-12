@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C1678"
+    android:background="#78abc9"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#1C1678"
+        android:background="#78abc9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="67dp"
-            android:background="#1C1678"
+            android:background="#78abc9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -140,6 +140,8 @@
                     android:layout_marginBottom="16dp"
                     android:gravity="center|left"
                     android:text="Date Of Journey"
+                    android:textColor="#000000"
+                    android:textColorLink="#000000"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/editTextText"
@@ -182,10 +184,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#1C1678"
+            android:backgroundTint="#78abc9"
             android:enabled="false"
             android:text="Booking"
-            android:textColor="#F4FF7B"
+            android:textColor="#ffffff"
             android:textSize="24sp" />
 
         <Button

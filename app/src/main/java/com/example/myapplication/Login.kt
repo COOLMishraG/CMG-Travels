@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.Network.RetrofitClient
 import com.example.myapplication.databinding.ActivityLoginBinding
+import com.google.gson.Gson
 import com.yourpackage.network.ApiService
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,10 +43,18 @@ class Login : AppCompatActivity() {
             }else if(password != confirmPassword){
                  Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             }else {
-
                 val TempUSer = User(name, phone.toInt(), email, password, userId)
                 val apiService = RetrofitClient.instance.create(ApiService::class.java)
                 val give = apiService.creteUser(TempUSer)
+                UserSession.user = TempUSer
+                UserSession.isLoggedIn = true
+
+                val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                val gson = Gson()
+                val userJson = gson.toJson(TempUSer)
+                editor.putString("user", userJson)
+                editor.apply()
 
                 give.enqueue(object : Callback<User>{
                     override fun onResponse(call: Call<User>, response: Response<User>) {

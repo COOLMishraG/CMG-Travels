@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#29229A"
+    android:background="#fdfefe"
     tools:context=".BusActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="#1C1678"
+        android:background="#679fc8"
         android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 

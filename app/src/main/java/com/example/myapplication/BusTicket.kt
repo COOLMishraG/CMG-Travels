@@ -6,11 +6,14 @@ data class BusTicket(
     val to: String,
     val departureTime: String,
     val arrivalTime: String,
-    val price: Double,
+    val busNumber: String,
+    val price: Int,
 
 )
 
-data class buses(
+data class Ticket(
+    val PNR:String,
+    val Name:String,
     val Time: String,
     val From: String,
     val To: String,

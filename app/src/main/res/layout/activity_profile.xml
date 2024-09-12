@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C1678"
+    android:background="#679fc8"
     tools:context=".Profile">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="#1C1678"
+        android:background="#679fc8"
         android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,9 +30,6 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,12 +40,12 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#1C1678">
+            android:background="#fdfefe">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F3EBEB"
+                android:background="#313b45"
                 android:orientation="vertical"
                 android:padding="12dp">
 
@@ -62,28 +59,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Modify your existing ticket"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📝 Modify Ticket"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Modify your existing ticket"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -95,28 +92,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="View your previous bookings and history"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🕒 Previous Booking / History"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="View your previous bookings and history"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -128,28 +125,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="View current offers and promotions"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🏷️ Offers"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="View current offers and promotions"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -161,28 +158,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Write feedback about your experience"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🖊️ Write Feedback"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Write feedback about your experience"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -194,28 +191,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Rate our app"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="⭐ Rate This App"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Rate our app"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -227,28 +224,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Share our app with others"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🔗 Share This App"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Share our app with others"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -260,28 +257,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Learn more about our company"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="ℹ️ About Us"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Learn more about our company"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -293,28 +290,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Read our privacy policy"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🔒 Privacy Policy"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Read our privacy policy"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -326,28 +323,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="View our cancellation policy"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="❌ Cancellation Policy"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="View our cancellation policy"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -359,28 +356,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Read our terms and conditions"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📄 Terms and Conditions"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Read our terms and conditions"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -392,28 +389,28 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Get in touch with our support team"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📞 Contact Us"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Get in touch with our support team"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -425,41 +422,41 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:contentDescription="Track the location of your bus"
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🚌 Track My Bus"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp" 
-                        android:contentDescription="Track the location of your bus"
-                        android:background="?android:attr/selectableItemBackground"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="16dp"
                         android:text=">"
-                        android:textColor="#1C1678"
-                        android:textSize="18sp"
-                        android:padding="16dp"/>
+                        android:textColor="#fdfefe"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#8576FF" />
+                    android:background="#6d8ca6" />
 
                 <TextView
                     android:id="@+id/signOut"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
                     android:clickable="true"
+                    android:contentDescription="Sign out of your account"
                     android:focusable="true"
                     android:padding="16dp"
                     android:text="🚪 Sign Out"
                     android:textColor="#FF0000"
-                    android:textSize="18sp"
-                    android:background="?android:attr/selectableItemBackground" 
-                    android:contentDescription="Sign out of your account"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </ScrollView>
@@ -491,12 +488,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#1C1678"
+            android:backgroundTint="#78abc9"
+            android:contentDescription="Currently on profile page"
             android:enabled="false"
             android:text="Profile"
-            android:textColor="#F4FF7B"
-            android:textSize="24sp" 
-            android:contentDescription="Currently on profile page"/>
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
