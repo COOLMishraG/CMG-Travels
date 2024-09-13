@@ -50,7 +50,7 @@ class SplashActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                     // Use the data
-                    Toast.makeText(this, "Welcome back, ${user.Name}!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Welcome back, ${user.Name}! ${user.password}", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 // Redirect to login if no user is logged in

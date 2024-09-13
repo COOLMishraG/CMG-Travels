@@ -16,7 +16,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class NewMainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityNewMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,6 +33,7 @@ class NewMainActivity : AppCompatActivity() {
         binding.buttonLogin.setOnClickListener {
             val apiService = RetrofitClient.instance.create(ApiService::class.java)
             val userID = binding.editTextUserId.text.toString()
+            val password = binding.editTextPassword.text.toString()
             val call = apiService.getUserDetails(userID)
 
             call.enqueue(object : Callback<User> {
@@ -42,15 +42,15 @@ class NewMainActivity : AppCompatActivity() {
                         val resUser = response.body()
                         if(resUser == null){
                             Toast.makeText(this@NewMainActivity, "User not found", Toast.LENGTH_SHORT).show()
-                        }else if(resUser.password != binding.editTextPassword.text.toString()){
+                        }else if(resUser.password != password){
                             Toast.makeText(this@NewMainActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
                         }else {
                             val intent = Intent(this@NewMainActivity, MainActivity::class.java)
                             UserSession.user = resUser
                             UserSession.isLoggedIn = true
-
                             val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
                             val editor = sharedPreferences.edit()
+                            editor.putBoolean("isLoggedIn", true)
                             val gson = Gson()
                             val userJson = gson.toJson(resUser)
                             editor.putString("user", userJson)

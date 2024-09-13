@@ -48,6 +48,7 @@ class BusAdapter(
             holder.bookButton.setOnClickListener {
                 val context = holder.itemView.context
                 val intent = Intent(context, TicketDetailActivity::class.java).apply {
+                    putExtra("userName" , UserSession.user?.Name)
                     putExtra("TICKET_FROM", ticket.from)
                     putExtra("TICKET_TO", ticket.to)
                     putExtra("TICKET_DATE", selectedDate)

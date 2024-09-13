@@ -1,5 +1,6 @@
 package com.yourpackage.network
 
+import com.example.myapplication.Ticket
 import com.example.myapplication.User
 import retrofit2.Call
 import retrofit2.http.Body
@@ -12,6 +13,8 @@ interface ApiService {
     fun getUserDetails(@Path("userId") userId: String): Call<User>
 
     @POST("user")
-    fun creteUser(@Body userDetails: User): Call<User>
+    fun createUser(@Body userIn: User): Call<User>
 
+    @POST("{UserId}/ticket")
+    fun createTicket(@Path("UserId") UserId: String, @Body ticket: Ticket): Call<Ticket>
 }

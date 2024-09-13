@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,6 +25,7 @@ class Profile : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        //Toast.makeText(this, "Welcome back, ${UserSession.user?.Name}!", Toast.LENGTH_SHORT).show()
         binding.bookingButton1.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -42,7 +44,8 @@ class Profile : AppCompatActivity() {
 
         }
         binding.signOut.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
+            UserSession.clearSession()
+            val intent = Intent(this, NewMainActivity::class.java)
             startActivity(intent)
         }
         binding.rateApp.setOnClickListener {

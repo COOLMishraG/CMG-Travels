@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Build.VERSION_CODES.N
 import android.os.Bundle
 import android.widget.Toast
@@ -43,18 +44,11 @@ class Login : AppCompatActivity() {
             }else if(password != confirmPassword){
                  Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             }else {
-                val TempUSer = User(name, phone.toInt(), email, password, userId)
+                val TempUSer = User(name , phone, email, password, userId)
                 val apiService = RetrofitClient.instance.create(ApiService::class.java)
-                val give = apiService.creteUser(TempUSer)
+                val give = apiService.createUser(TempUSer)
                 UserSession.user = TempUSer
                 UserSession.isLoggedIn = true
-
-                val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
-                val editor = sharedPreferences.edit()
-                val gson = Gson()
-                val userJson = gson.toJson(TempUSer)
-                editor.putString("user", userJson)
-                editor.apply()
 
                 give.enqueue(object : Callback<User>{
                     override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -62,6 +56,9 @@ class Login : AppCompatActivity() {
                             val resUser = response.body()
                             val userName = resUser?.Name
                             Toast.makeText(this@Login, "User created successfully $userName", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@Login, NewMainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }else {
                             Toast.makeText(this@Login, "Error: ${response.code()}", Toast.LENGTH_SHORT).show()
                         }
@@ -71,6 +68,13 @@ class Login : AppCompatActivity() {
                         Toast.makeText(this@Login, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })
+                val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                val gson = Gson()
+                editor.putBoolean("isLoggedIn", true)
+                val userJson = gson.toJson(TempUSer)
+                editor.putString("user", userJson)
+                editor.apply()
 
             }
         }
