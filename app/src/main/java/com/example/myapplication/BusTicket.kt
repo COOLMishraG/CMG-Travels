@@ -8,7 +8,6 @@ data class BusTicket(
     val arrivalTime: String,
     val busNumber: String,
     val price: Int,
-
 )
 
 data class Ticket(
