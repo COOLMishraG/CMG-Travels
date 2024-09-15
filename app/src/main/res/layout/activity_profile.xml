@@ -45,7 +45,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#313b45"
+                android:background="#fdfefe"
                 android:orientation="vertical"
                 android:padding="12dp">
 
@@ -65,7 +65,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📝 Modify Ticket"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -98,7 +98,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🕒 Previous Booking / History"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -106,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -131,7 +131,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🏷️ Offers"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -139,7 +139,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -164,7 +164,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🖊️ Write Feedback"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -172,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -197,7 +197,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="⭐ Rate This App"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -205,7 +205,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -230,7 +230,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🔗 Share This App"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -238,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -263,7 +263,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="ℹ️ About Us"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -271,7 +271,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -296,7 +296,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🔒 Privacy Policy"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -304,7 +304,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -329,7 +329,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="❌ Cancellation Policy"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -337,7 +337,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -362,7 +362,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📄 Terms and Conditions"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -370,7 +370,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -395,7 +395,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="📞 Contact Us"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -403,7 +403,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -428,7 +428,7 @@
                         android:focusable="true"
                         android:padding="16dp"
                         android:text="🚌 Track My Bus"
-                        android:textColor="#fdfefe"
+                        android:textColor="#10105C"
                         android:textSize="18sp" />
 
                     <TextView
@@ -436,7 +436,7 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text=">"
-                        android:textColor="#fdfefe"
+                        android:textColor="#17176B"
                         android:textSize="18sp" />
                 </LinearLayout>
 

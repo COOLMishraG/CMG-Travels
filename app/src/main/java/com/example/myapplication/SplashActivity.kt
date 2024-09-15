@@ -1,10 +1,13 @@
 package com.example.myapplication
 
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
+import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -24,6 +27,11 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+        //hideSystemUI()
         // Load animations
         val rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate)
         val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
@@ -54,10 +62,22 @@ class SplashActivity : AppCompatActivity() {
                 }
             } else {
                 // Redirect to login if no user is logged in
-                startActivity(Intent(this, NewMainActivity::class.java))
-                finish()
+                val intent = Intent(this@SplashActivity, NewMainActivity::class.java)
+                val pairs = arrayOf(android.util.Pair(binding.splashLogo as View, "logo_image")) // Use android.util.Pair
+                val options = ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity, *pairs)
+                startActivity(intent, options.toBundle())
             }
         }, 4000)
 
+    }
+    private fun hideSystemUI() {
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        or View.SYSTEM_UI_FLAG_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                )
     }
 }

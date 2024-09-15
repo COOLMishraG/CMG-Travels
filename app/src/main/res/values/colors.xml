@@ -5,4 +5,7 @@
     <color name="dark_blue">#1A237E</color>
     <color name="medium_blue">#3949AB</color>
     <color name="light_blue">#E8EAF6</color>
+    <color name="PrimaryLightBlue">#679FC8</color>
+    <color name="SuperDarkBlue">#10105C</color>
+    <color name="Cream">#fdfefe</color>
 </resources>

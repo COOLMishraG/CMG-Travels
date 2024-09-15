@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import android.os.Build.VERSION_CODES.N
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.Nullable
@@ -30,6 +31,10 @@ class Login : AppCompatActivity() {
         }
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
         // Set up button click listener
         binding.buttonCreateUser.setOnClickListener {

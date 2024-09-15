@@ -43,9 +43,12 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.material.v190)
     implementation(libs.androidx.activity)
     implementation (libs.retrofit)
+    implementation(libs.material.v100)
     implementation (libs.gson)
+    implementation(libs.material)
     implementation (libs.converter.gson)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.androidx.activity.ktx)  // Or latest version
