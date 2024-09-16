@@ -78,7 +78,8 @@
             android:layout_marginHorizontal="25dp"
             android:layout_marginVertical="5dp"
             android:hint="Password"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/SuperDarkBlue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passIn"
@@ -109,11 +110,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25dp"
-            android:transitionName="GoIn"
             android:backgroundTint="@color/SuperDarkBlue"
             android:text="GO"
-            android:textColorLink="@color/SuperDarkBlue"
-            android:textSize="24sp" />
+            android:textColor="@color/Cream"
+            android:textColorLink="@color/Cream"
+            android:textSize="24sp"
+            android:transitionName="GoIn" />
 
         <Button
             android:id="@+id/buttonSignUp"

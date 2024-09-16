@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +17,6 @@ class Bus : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bus)
         enableEdgeToEdge()
-
 
         recyclerView = findViewById(R.id.recyclerViewBuses)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -48,7 +48,10 @@ class Bus : AppCompatActivity() {
         val allTickets = mutableListOf<BusTicket>()
         var ticketId = 1
         val busNumberCounters = mutableMapOf<String, Int>()
-
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         fun generateBusNumber(source: String, destination: String): String {
             val sourceCode = source.take(2).uppercase()
             val destCode = destination.take(2).uppercase()

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="#78abc9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,9 +32,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="25dp"
-                android:text="Bus tickets"
+                android:text="CMG-Travels"
                 android:textColor="#FDFDFD"
                 android:textSize="24sp"
+                android:transitionName="Wel_Come"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,9 +45,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:paddingEnd="25dp"
-                android:text="CMG-Travels"
+                android:text="Bus tickets"
                 android:textColor="#FDFDFD"
                 android:textSize="24sp"
+                android:transitionName="Wel_Come01"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -71,23 +73,27 @@
                 android:layout_height="match_parent"
                 android:background="#EEEEEE">
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="12dp"
                     android:ems="10"
+                    android:fontFamily="@font/antic"
+                    android:gravity="center_vertical"
                     android:hint="To"
                     android:inputType="text"
-                    android:textColor="#000000"
+                    android:textColor="@color/SuperDarkBlue"
                     android:textColorHighlight="#000000"
                     android:textColorHint="#000000"
                     android:textColorLink="#000000"
+                    android:textSize="24sp"
+                    android:transitionName="PhoneIN"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/editTextText2"
                     app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText2"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
@@ -96,12 +102,17 @@
                     android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:ems="10"
+                    android:fontFamily="@font/antic"
+                    android:gravity="center_vertical"
                     android:hint="From"
                     android:inputType="text"
-                    android:textColor="#040101"
+                    android:outlineProvider="paddedBounds"
+                    android:textColor="@color/SuperDarkBlue"
                     android:textColorHighlight="#000000"
                     android:textColorHint="#000000"
                     android:textColorLink="#000000"
+                    android:textSize="24sp"
+                    android:transitionName="UserIN"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -162,6 +173,7 @@
             android:text="Search Buses"
             android:textColor="#021A42"
             android:textSize="24sp"
+            android:transitionName="GoIn"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -188,7 +200,8 @@
             android:enabled="false"
             android:text="Booking"
             android:textColor="#ffffff"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:transitionName="button" />
 
         <Button
             android:id="@+id/profileButton"
@@ -198,7 +211,8 @@
             android:backgroundTint="#FFFFFF"
             android:text="Profile"
             android:textColor="#1C1678"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:transitionName="button" />
 
     </LinearLayout>
 
@@ -211,6 +225,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:elevation="5dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

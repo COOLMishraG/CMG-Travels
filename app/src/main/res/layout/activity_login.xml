@@ -167,7 +167,7 @@
                 app:cursorColor="#061233"
                 app:hintTextColor="#061233"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#0B1438">
+                app:passwordToggleTint="@color/SuperDarkBlue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextPassword"
@@ -190,7 +190,7 @@
                 app:cursorColor="#061233"
                 app:hintTextColor="#061233"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#0B1438">
+                app:passwordToggleTint="@color/SuperDarkBlue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextConfirmPassword"
@@ -221,7 +221,7 @@
                     android:layout_height="match_parent"
                     android:inputType="text"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/Cream" />
+                    android:textColor="@color/SuperDarkBlue" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </ScrollView>

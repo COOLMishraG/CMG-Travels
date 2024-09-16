@@ -39,6 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
         // Start animations
         binding.splashLogo.startAnimation(rotateAnimation)
+        binding.textView8.startAnimation(fadeInAnimation)
        //binding.appName.startAnimation(fadeInAnimation)
         // Navigate to LoginActivity after 5 seconds
         Handler(Looper.getMainLooper()).postDelayed({
@@ -63,7 +64,8 @@ class SplashActivity : AppCompatActivity() {
             } else {
                 // Redirect to login if no user is logged in
                 val intent = Intent(this@SplashActivity, NewMainActivity::class.java)
-                val pairs = arrayOf(android.util.Pair(binding.splashLogo as View, "logo_image")) // Use android.util.Pair
+                val pairs = arrayOf(android.util.Pair(binding.splashLogo as View, "logo_image"),
+                    android.util.Pair(binding.textView8 as View, "Wel_Come")) // Use android.util.Pair
                 val options = ActivityOptions.makeSceneTransitionAnimation(this@SplashActivity, *pairs)
                 startActivity(intent, options.toBundle())
             }

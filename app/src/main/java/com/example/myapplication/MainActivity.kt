@@ -1,10 +1,16 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import android.widget.ProgressBar
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
@@ -17,7 +23,7 @@ import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var progressBar: ProgressBar
     private val getStationResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == RESULT_OK) {
@@ -48,14 +54,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        progressBar = binding.progressBar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // Set up Source Station EditText click listener to open SpinnerActivity
+        binding.editTextText.setOnClickListener {
+            val intent = Intent(this, Boarding::class.java)
+            intent.putExtra("requestCode", DESTINATION_STATION_REQUEST_CODE)
+            getStationResult.launch(intent)
+        }
+        // Set up Destination Station EditText click listener to open SpinnerActivity
+        binding.editTextText2.setOnClickListener {
+            val intent = Intent(this, Boarding::class.java)
+            intent.putExtra("requestCode", SOURCE_STATION_REQUEST_CODE)
+            getStationResult.launch(intent)
+        }
         binding.profileButton.setOnClickListener {
          val intent = Intent(this, Profile::class.java)
-            startActivity(intent)
+            val pairs = arrayOf(android.util.Pair(binding.profileButton as android.view.View, "img_anim"),
+                android.util.Pair(binding.textView5 as android.view.View, "Wel_Come"))
+            val option = ActivityOptions.makeSceneTransitionAnimation(this, *pairs)
+            startActivity(intent , option.toBundle())
             finish()
         }
         binding.Searchbuses.setOnClickListener{
@@ -73,13 +95,18 @@ class MainActivity : AppCompatActivity() {
                     binding.textView2.error = "Please enter a value"
                 }
                 } else {
-                val intent = Intent(this, Bus::class.java)
-                intent.putExtra("from", From)
-                intent.putExtra("to", To)
-                intent.putExtra("date", DOJ)
-                Log.d("MainActivity", "From: $From, To: $To, DOJ: $DOJ")
+                    progressBar.visibility = ProgressBar.VISIBLE
+                Handler(Looper.getMainLooper()).postDelayed({
+                    progressBar.visibility= ProgressBar.GONE
+                    val intent = Intent(this, Bus::class.java)
+                    intent.putExtra("from", From)
+                    intent.putExtra("to", To)
+                    intent.putExtra("date", DOJ)
+                    Log.d("MainActivity", "From: $From, To: $To, DOJ: $DOJ")
+                    startActivity(intent)
+                    finish()
+                },1000)
 
-                startActivity(intent)
             }
         }
         // Get the selected station name from the intent
@@ -92,22 +119,14 @@ class MainActivity : AppCompatActivity() {
 
         // Set up Date Selector click listener
         binding.DateSelector.setOnClickListener {
+            hideKeyboard()
             showDate()
         }
 
-        // Set up Source Station EditText click listener to open SpinnerActivity
-        binding.editTextText.setOnClickListener {
-            val intent = Intent(this, Boarding::class.java)
-            intent.putExtra("requestCode", DESTINATION_STATION_REQUEST_CODE)
-            getStationResult.launch(intent)
-        }
 
-        // Set up Destination Station EditText click listener to open SpinnerActivity
-        binding.editTextText2.setOnClickListener {
-            val intent = Intent(this, Boarding::class.java)
-            intent.putExtra("requestCode", SOURCE_STATION_REQUEST_CODE)
-            getStationResult.launch(intent)
-        }
+
+
+
 
         // Set up imageView click listener to swap text between editTextText and editTextText2
         binding.imageView.setOnClickListener {
@@ -140,5 +159,12 @@ class MainActivity : AppCompatActivity() {
         )
 
         datePickerDialog.show()
+    }
+    private fun hideKeyboard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 }

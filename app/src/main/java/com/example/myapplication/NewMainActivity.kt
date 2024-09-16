@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -33,6 +34,7 @@ class NewMainActivity : AppCompatActivity() {
             insets
         }
         val binding = ActivityNewMainBinding.inflate(layoutInflater)
+        enableEdgeToEdge()
         setContentView(binding.root)
         binding.buttonSignUp.setOnClickListener {
             val intent = Intent(this, Login::class.java)
@@ -62,6 +64,13 @@ class NewMainActivity : AppCompatActivity() {
                             Toast.makeText(this@NewMainActivity, "Incorrect password", Toast.LENGTH_SHORT).show()
                         }else {
                             val intent = Intent(this@NewMainActivity, MainActivity::class.java)
+                            val pairs = arrayOf(android.util.Pair(binding.textView3 as View, "Wel_Come"),
+                                android.util.Pair(binding.textView4 as View, "Wel_Come01"),
+                                android.util.Pair(binding.textInputLayout2 as View, "PhoneIn"),
+                                android.util.Pair(binding.textInputLayout as View, "UserIN"),
+                                ) // Use android.util.Pair
+                            val options = ActivityOptions.makeSceneTransitionAnimation(this@NewMainActivity, *pairs)
+
                             UserSession.user = resUser
                             UserSession.isLoggedIn = true
                             val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
@@ -71,7 +80,8 @@ class NewMainActivity : AppCompatActivity() {
                             val userJson = gson.toJson(resUser)
                             editor.putString("user", userJson)
                             editor.apply()
-                            startActivity(intent)
+                            startActivity(intent, options.toBundle())
+
                         }
                     }
                 }

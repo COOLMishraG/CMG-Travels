@@ -333,6 +333,7 @@
             android:checked="false"
             android:text="I confirm the booking details are correct"
             android:textColor="#0C1436"
+            android:textColorHint="@color/SuperDarkBlue"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -354,8 +355,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="391dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:outlineProvider="background"
+            android:textColorHint="@color/SuperDarkBlue"
+            app:hintTextColor="@color/SuperDarkBlue"
             app:layout_constraintBottom_toTopOf="@+id/checkboxDetailsRevised"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">

@@ -2,7 +2,9 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.Network.RetrofitClient
 import com.example.myapplication.databinding.ActivityTicketDetailBinding
@@ -18,7 +20,11 @@ class TicketDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        enableEdgeToEdge()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
         val from = intent.getStringExtra("TICKET_FROM")
         val to = intent.getStringExtra("TICKET_TO")
         val date = intent.getStringExtra("TICKET_DATE")
