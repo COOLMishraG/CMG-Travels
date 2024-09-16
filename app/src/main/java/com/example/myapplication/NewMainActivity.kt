@@ -36,7 +36,15 @@ class NewMainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.buttonSignUp.setOnClickListener {
             val intent = Intent(this, Login::class.java)
-            startActivity(intent)
+            val pairs = arrayOf(android.util.Pair(binding.imageView2 as View, "img_anim"),
+                android.util.Pair(binding.textView3 as View, "Wel_Come"),
+                android.util.Pair(binding.textView4 as View, "Wel_Come01"),
+                android.util.Pair(binding.textInputLayout2 as View, "PhoneIn"),
+                android.util.Pair(binding.textInputLayout as View, "UserIN"),
+                )
+            val options = android.app.ActivityOptions.makeSceneTransitionAnimation(this, *pairs)
+            startActivity(intent, options.toBundle())
+
         }
         binding.buttonLogin.setOnClickListener {
             val apiService = RetrofitClient.instance.create(ApiService::class.java)
