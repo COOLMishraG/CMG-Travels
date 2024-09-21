@@ -48,11 +48,13 @@ dependencies {
     implementation (libs.retrofit)
     implementation(libs.material.v100)
     implementation (libs.gson)
+    implementation (libs.play.services.maps)
     implementation(libs.material)
     implementation (libs.converter.gson)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.androidx.activity.ktx)  // Or latest version
     implementation (libs.androidx.fragment.ktx)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

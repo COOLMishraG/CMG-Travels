@@ -7,5 +7,4 @@ data class User(
     val password: String,
     val UserId: String,
     val PNRs: MutableList<String>? = null,
-
 )

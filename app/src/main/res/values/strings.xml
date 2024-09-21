@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CMG-Travels</string>
+    <string name="weather_api">be35cff7c045c6029faa2b97c3b58ea0</string>
 </resources>

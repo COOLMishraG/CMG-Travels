@@ -99,7 +99,11 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        binding.trackMyBus.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.TrackingBus")
+            startActivity(intent)
+        }
         // Set up click listeners for the new options
 
     }
