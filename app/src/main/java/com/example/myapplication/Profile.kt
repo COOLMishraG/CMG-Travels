@@ -105,7 +105,11 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
         }
         // Set up click listeners for the new options
-
+        binding.previousBooking.setOnClickListener {
+            val intent = Intent()
+            intent.setClassName(this, "com.example.myapplication.ProfilePack.PreviousBooking")
+            startActivity(intent)
+        }
     }
     private fun signOut() {
         // Clear the SharedPreferences

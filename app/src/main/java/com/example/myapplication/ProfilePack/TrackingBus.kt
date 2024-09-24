@@ -29,6 +29,7 @@ import com.google.android.gms.maps.model.*
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.Calendar
 import kotlin.math.pow
 
 class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
@@ -128,12 +129,21 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
                     val builder = LatLngBounds.Builder()
                     builder.include(currentLatLng) // Include current location
                     builder.include(destinationLatLng) // Include destination location
-
+                   val distanceBetweenBoth = haversine(currentLatLng.latitude, currentLatLng.longitude, destinationLatLng.latitude, destinationLatLng.longitude)
                     //Adding the Distance between the source and the target
                     val customMarkerView = LayoutInflater.from(this).inflate(R.layout.marker_info_window, null)
-                    val markerText = customMarkerView.findViewById<TextView>(R.id.markerTitle)
-                    markerText.text = "MP-HTJI-689"
+
                     val markerText2 = customMarkerView.findViewById<TextView>(R.id.markerTitle2)
+                    markerText2.text = "${distanceBetweenBoth.toInt()} km"
+                    val distanceInKm = distanceBetweenBoth.toInt()
+                    val estimatedArrivalTimeInHours = distanceInKm / 55.0
+                    val calendar = Calendar.getInstance()
+                    val minutesToAdd = (estimatedArrivalTimeInHours * 60).toInt()
+                    calendar.add(Calendar.MINUTE, minutesToAdd)
+                    val arrivalHour = calendar.get(Calendar.HOUR_OF_DAY)
+                    val arrivalMinute = calendar.get(Calendar.MINUTE)
+
+                    binding.textView9.text = "  EAT: ${String.format("%02d:%02d", arrivalHour, arrivalMinute)} hrs  "
                     val customMarkerBitmap = createBitmapFromView(customMarkerView)
                     googleMap.addMarker(
                         MarkerOptions()
@@ -148,7 +158,6 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-
     // Function to create a smooth horizontal curve using quadratic Bézier
     private fun drawLeftwardCurveBetweenLocations(start: LatLng, end: LatLng): List<LatLng> {
         val pattern = listOf<PatternItem>(Dot(), Gap(10f)) // Dotted pattern

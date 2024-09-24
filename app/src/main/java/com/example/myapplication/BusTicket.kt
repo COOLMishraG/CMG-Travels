@@ -20,3 +20,11 @@ data class Ticket(
     val arrivalTime: String,
     val Price: Number
 )
+
+data class Booking(
+    val pnr: String,
+    val from: String,
+    val to: String,
+    val date: String,
+    val price: String
+)

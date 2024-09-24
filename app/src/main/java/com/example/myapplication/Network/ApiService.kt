@@ -17,4 +17,11 @@ interface ApiService {
 
     @POST("{UserId}/ticket")
     fun createTicket(@Path("UserId") UserId: String, @Body ticket: Ticket): Call<Ticket>
+
+    @GET("{UserId}/Booking")
+    fun getBookingHistory(@Path("UserId") UserId: String): Call<MutableList<String>>
+
+    @GET("{UserId}/{ticket}")
+    fun getTicketDetails(@Path("UserId") UserId: String, @Path("ticket") ticket: String): Call<Ticket>
+
 }
