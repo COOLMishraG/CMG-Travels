@@ -140,6 +140,11 @@ class PreviousBooking : AppCompatActivity() {
             putExtra("From", ticket.From)
             putExtra("To", ticket.To)
             putExtra("Price", ticket.Price)
+            putExtra("BusNo" , ticket.BusNo)
+            putExtra("departTime", ticket.departTime)
+            putExtra("arrivalTime", ticket.arrivalTime)
+            putExtra("Date", ticket.Name)
+
         }
         startActivity(intent)
     }
