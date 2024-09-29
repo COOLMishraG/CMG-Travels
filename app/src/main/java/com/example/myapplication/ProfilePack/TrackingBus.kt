@@ -6,12 +6,16 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
@@ -30,6 +34,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Calendar
+import kotlin.math.log
 import kotlin.math.pow
 import kotlin.random.Random
 
@@ -65,16 +70,61 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         mapView = binding.mapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
     }
+    private fun createCustomMarkerBitmap(layoutResId: Int): BitmapDescriptor {
+        // Inflate the layout
+        val view = LayoutInflater.from(this).inflate(layoutResId, null)
+        view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+        view.layout(0, 0, view.measuredWidth, view.measuredHeight)
+        val bitmap = Bitmap.createBitmap(view.measuredWidth, view.measuredHeight, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.draw(canvas)
 
+        return BitmapDescriptorFactory.fromBitmap(bitmap)
+    }
+
+    private fun addMarkersForCoordinates() {
+         val coordinatesList = listOf(
+            LatLng(19.0760, 72.8777), // Mumbai
+            LatLng(22.5726, 88.3639), // Kolkata
+            LatLng(28.6139, 77.2090), // Delhi
+            LatLng(13.0827, 80.2707), // Chennai
+            LatLng(17.3850, 78.4867), // Hyderabad
+            LatLng(12.9716, 77.5946), // Bangalore
+            LatLng(26.9124, 75.7873), // Jaipur
+            LatLng(22.3072, 73.1812), // Ahmedabad
+            LatLng(30.7333, 76.7794), // Chandigarh
+            LatLng(23.2599, 77.4126), // Bhopal
+            LatLng(21.1458, 79.0882), // Nagpur
+            LatLng(23.1762, 78.6569), // Gwalior
+            LatLng(25.4376, 78.5722), // Sagar
+            LatLng(19.2183, 72.9781),// Thane
+             LatLng(22.7197, 75.8573) // Indore
+        )
+
+        for (coordinate in coordinatesList) {
+            // Create the custom marker bitmap
+            val customMarkerBitmap = createCustomMarkerBitmap(R.layout.stationmarker)
+
+            googleMap.addMarker(
+                MarkerOptions()
+                    .position(coordinate)
+                    .title("Marker at ${coordinate.latitude}, ${coordinate.longitude}")
+                    .icon(customMarkerBitmap) // Use your custom icon
+            )
+        }
+    }
     @SuppressLint("MissingInflatedId")
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
+        setupMap(googleMap)
         googleMap.uiSettings.isZoomControlsEnabled = true // Enable zoom controls
 
         // Enable traffic layer
@@ -95,22 +145,25 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
         val customMarkerBitmap = createBitmapFromView(customMarkerView)
 
         // Set destination location (Example: India Gate)
+       // destinationLatLng = LatLng(16.2469, 79.4479) // Change this LatLng to your destination
         val (randomLat, randomLng) = getRandomCoordinatesForCalifornia()
-        val destinationLatLng = LatLng(randomLat, randomLng)
-
+        Toast.makeText( this , "$randomLat.toString() $randomLng.toString()", Toast.LENGTH_SHORT).show()
+        destinationLatLng = LatLng(randomLat, randomLng)
+        // Add a marker for the destination location
         googleMap.addMarker(
             MarkerOptions()
                 .position(destinationLatLng)
                 .title("Destination Location")
                 .icon(BitmapDescriptorFactory.fromBitmap(customMarkerBitmap))
         )
+        addMarkersForCoordinates()
     }
     private fun getRandomCoordinatesForCalifornia(): Pair<Double, Double> {
         // California boundaries
-        val minLat = 21.319113
-        val maxLat = 27.251295
-        val minLng =  74.410162
-        val maxLng = 82.705933
+        val minLat = 21.1600
+        val maxLat = 26.3000
+        val minLng = 74.0000
+        val maxLng = 82.0000
 
         // Generate random latitude and longitude
         val randomLat = Random.nextDouble(minLat, maxLat)
@@ -301,7 +354,7 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
         val canvas = Canvas(bitmap)
         drawable.setBounds(0, 0, canvas.width, canvas.height)
         drawable.draw(canvas)
-        val sizeMultiplier = 0.06f // Change this value to resize (0.5f = 50% of original size)
+        val sizeMultiplier = 0.05f // Change this value to resize (0.5f = 50% of original size)
         return Bitmap.createScaledBitmap(bitmap, (bitmap.width * sizeMultiplier).toInt(), (bitmap.height * sizeMultiplier).toInt(), false)
     }
 
@@ -325,5 +378,86 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
     override fun onLowMemory() {
         super.onLowMemory()
         mapView.onLowMemory()
+    }
+    private fun setupMap(googleMap: GoogleMap) {
+        // Set the map style to dark mode
+        val mapStyleOptions = MapStyleOptions("""
+        [
+            {
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#212121"
+                    }
+                ]
+            },
+            {
+                "elementType": "label.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "elementType": "label.text.fill",
+                "stylers": [
+                    {
+                        "color": "#757575"
+                    }
+                ]
+            },
+            {
+                "elementType": "label.text.stroke",
+                "stylers": [
+                    {
+                        "color": "#212121"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#303030"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#3e3e3e"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#000000"
+                    }
+                ]
+            }
+        ]
+    """.trimIndent())
+
+        try {
+            googleMap.setMapStyle(mapStyleOptions)
+        } catch (e: Exception) {
+            Log.e("MapStyle", "Failed to set map style: ", e)
+        }
     }
 }
