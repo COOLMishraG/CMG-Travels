@@ -2,6 +2,7 @@ package com.example.myapplication.ProfilePack
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -118,7 +119,7 @@ class PreviousBooking : AppCompatActivity() {
             pnrTextView.text = "PNR: ${ticket.PNR}"
             fromTextView.text = "Boarding: ${ticket.From}"
             toTextView.text = "Destination: ${ticket.To}"
-            timeTextView.text = "Time: ${ticket.departTime}"
+            timeTextView.text = "Time: ${ticket.DepartureTime}"
 
             // Optionally set a click listener
             ticketView.setOnClickListener {
@@ -131,20 +132,15 @@ class PreviousBooking : AppCompatActivity() {
     }
 
     private fun onItemClick(ticket: Ticket) {
+        // Log the ticket details to ensure data is correct
+        Log.d("Ticket Info", "PNR: ${ticket.PNR}, From: ${ticket.From}, To: ${ticket.To}")
+
         // Handle click event on a ticket (e.g., navigate to ticket details page)
         Toast.makeText(this, "Clicked on PNR: ${ticket.PNR}", Toast.LENGTH_SHORT).show()
 
         // Navigate to ticket details page
-        val intent = Intent(this, PreviousBookingDetailsActivity::class.java).apply {
+        val intent = Intent(this@PreviousBooking, ClickTicket::class.java).apply {
             putExtra("PNR", ticket.PNR)
-            putExtra("From", ticket.From)
-            putExtra("To", ticket.To)
-            putExtra("Price", ticket.Price)
-            putExtra("BusNo" , ticket.BusNo)
-            putExtra("departTime", ticket.departTime)
-            putExtra("arrivalTime", ticket.arrivalTime)
-            putExtra("Date", ticket.Name)
-
         }
         startActivity(intent)
     }

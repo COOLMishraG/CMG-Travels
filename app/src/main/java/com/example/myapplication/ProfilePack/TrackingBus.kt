@@ -31,6 +31,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Calendar
 import kotlin.math.pow
+import kotlin.random.Random
 
 class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mapView: MapView
@@ -94,7 +95,8 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
         val customMarkerBitmap = createBitmapFromView(customMarkerView)
 
         // Set destination location (Example: India Gate)
-        destinationLatLng = LatLng(16.2469, 79.4479) // Change this LatLng to your destination
+        val (randomLat, randomLng) = getRandomCoordinatesForCalifornia()
+        val destinationLatLng = LatLng(randomLat, randomLng)
 
         googleMap.addMarker(
             MarkerOptions()
@@ -103,7 +105,19 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
                 .icon(BitmapDescriptorFactory.fromBitmap(customMarkerBitmap))
         )
     }
+    private fun getRandomCoordinatesForCalifornia(): Pair<Double, Double> {
+        // California boundaries
+        val minLat = 21.319113
+        val maxLat = 27.251295
+        val minLng =  74.410162
+        val maxLng = 82.705933
 
+        // Generate random latitude and longitude
+        val randomLat = Random.nextDouble(minLat, maxLat)
+        val randomLng = Random.nextDouble(minLng, maxLng)
+
+        return Pair(randomLat, randomLng)
+    }
     private fun getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.lastLocation.addOnSuccessListener { location ->
@@ -158,6 +172,7 @@ class TrackingBus : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
+
     // Function to create a smooth horizontal curve using quadratic Bézier
     private fun drawLeftwardCurveBetweenLocations(start: LatLng, end: LatLng): List<LatLng> {
         val pattern = listOf<PatternItem>(Dot(), Gap(10f)) // Dotted pattern

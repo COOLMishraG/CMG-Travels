@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cmg"
-    android:backgroundTint="#3610205C"
     android:backgroundTintMode="src_in">
 
     <androidx.appcompat.widget.Toolbar
@@ -44,10 +44,13 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar4">
 
         <TableRow>
+
             <TextView
+                android:id="@+id/bs"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Boarding Station:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -57,16 +60,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<boarding_station>"
+                android:text="boarding_station"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/ds"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Destination Station:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -76,16 +83,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<destination_station>"
+                android:text="destination_station"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/dt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Boarding Time:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -95,16 +106,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<boarding_time>"
+                android:text="boarding_time"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/at"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Arrival Time:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -114,16 +129,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<arrival_time>"
+                android:text="arrival_time"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/c"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Cost:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -133,16 +152,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<cost>"
+                android:text="cost"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/d"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Date:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -152,16 +175,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<date>"
+                android:text="date"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/TOP"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Type of Payment:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -171,17 +198,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<payment_type>"
+                android:text="payment_type"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <!-- New fields added -->
         <TableRow>
+
             <TextView
+                android:id="@+id/n"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Name:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -191,16 +222,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<passenger_name>"
+                android:text="passenger_name"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/tob"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Type of Bus:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -210,16 +245,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<bus_type>"
+                android:text="bus_type"
                 android:textColor="#EB0404" />
         </TableRow>
 
         <TableRow>
+
             <TextView
+                android:id="@+id/bn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
                 android:text="Bus No.:"
                 android:textColor="@color/SuperDarkBlue" />
@@ -229,8 +268,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:fontFamily="@font/bungee"
                 android:padding="8dp"
-                android:text="<bus_number>"
+                android:text="bus_number"
                 android:textColor="#EB0404" />
         </TableRow>
     </TableLayout>
@@ -266,5 +306,14 @@
             android:textColor="@color/Cream" /> <!-- Disabled button -->
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="99dp"
+        android:layout_height="81dp"
+        android:elevation="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
+        app:srcCompat="@drawable/cmg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

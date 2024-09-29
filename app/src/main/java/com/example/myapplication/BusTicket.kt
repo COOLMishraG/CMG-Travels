@@ -16,8 +16,8 @@ data class Ticket(
     val From: String,
     val To: String,
     val BusNo: String,
-    val departTime: String,
-    val arrivalTime: String,
+    val DepartureTime: String,
+    val ArrivalTime: String,
     val Price: Number
 )
 

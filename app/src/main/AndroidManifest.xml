@@ -2,10 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,15 +21,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+
+        <!-- FileProvider for sharing PDF files -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Existing activities -->
         <activity
             android:name=".ProfilePack.ClickTicket"
             android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
+
         <activity
             android:name=".ProfilePack.PreviousBookingDetailsActivity"
             android:exported="false" />
@@ -43,22 +55,21 @@
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <activity
             android:name=".ProfilePack.ContactUs"
             android:exported="false" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBcbSSmVi631Zl1PwId6q1J1un8x5y-JRI" />
-
         <activity
             android:name=".ProfilePack.TermsAndConditions"
             android:exported="false" />
         <activity
             android:name=".ProfilePack.PrivacyPolicy"
-            android:exported="false" /> <!-- Existing activities -->
+            android:exported="false" />
         <activity
             android:name=".ProfilePack.CancellationPolicy"
             android:exported="false" />
@@ -85,7 +96,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" /> <!-- New activities -->
+            android:exported="true" />
         <activity
             android:name=".ProfilePack.Offers"
             android:exported="false" />
@@ -99,9 +110,14 @@
             android:name=".ProfilePack.RateThisApp"
             android:label="Rate This App" />
 
+        <!-- Meta-data for fonts -->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-    </application>
 
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBcbSSmVi631Zl1PwId6q1J1un8x5y-JRI" />
+    </application>
 </manifest>
