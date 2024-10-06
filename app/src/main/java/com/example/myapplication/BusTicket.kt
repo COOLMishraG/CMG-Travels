@@ -2,12 +2,12 @@ package com.example.myapplication
 
 data class BusTicket(
     val id: String,
-    val from: String,
-    val to: String,
-    val departureTime: String,
-    val arrivalTime: String,
-    val busNumber: String,
-    val price: Int,
+    val From: String,
+    val To: String,
+    val DepartureTime: String,
+    val ArrivalTime: String,
+    val BusNo: String,
+    val Price: Int,
 )
 
 data class Ticket(

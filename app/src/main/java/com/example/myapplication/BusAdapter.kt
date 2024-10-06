@@ -31,17 +31,16 @@ class BusAdapter(
             .inflate(R.layout.bus_ticket_item, parent, false)
         return BusViewHolder(itemView)
     }
-
     override fun onBindViewHolder(holder: BusViewHolder, position: Int) {
         val ticket = busTickets[position]
         if (matchesFilter(ticket)) {
-            holder.routeTo.text = ticket.to
-            holder.routeFrom.text = ticket.from
+            holder.routeTo.text = ticket.To
+            holder.routeFrom.text = ticket.From
             holder.date.text = selectedDate
-            holder.time.text = ticket.arrivalTime
-            holder.DeptTime.text = ticket.departureTime
-            holder.price.text = "₹${ticket.price}"
-            holder.busnumber.text = ticket.busNumber
+            holder.time.text = ticket.ArrivalTime
+            holder.DeptTime.text = ticket.DepartureTime
+            holder.price.text = "₹${ticket.Price}"
+            holder.busnumber.text = ticket.BusNo
             holder.itemView.visibility = View.VISIBLE
 
             // Set click listener for the book button
@@ -49,24 +48,24 @@ class BusAdapter(
                 val context = holder.itemView.context
                 val intent = Intent(context, TicketDetailActivity::class.java).apply {
                     putExtra("userName" , UserSession.user?.Name)
-                    putExtra("TICKET_FROM", ticket.from)
-                    putExtra("TICKET_TO", ticket.to)
+                    putExtra("TICKET_FROM", ticket.From)
+                    putExtra("TICKET_TO", ticket.To)
                     putExtra("TICKET_DATE", selectedDate)
-                    putExtra("TICKET_ARRIVAL_TIME", ticket.arrivalTime)
-                    putExtra("TICKET_DEPARTURE_TIME", ticket.departureTime)
-                    putExtra("TICKET_BUS_NUMBER", ticket.busNumber)
-                    putExtra("TICKET_PRICE", ticket.price)
+                    putExtra("TICKET_ARRIVAL_TIME", ticket.ArrivalTime)
+                    putExtra("TICKET_DEPARTURE_TIME", ticket.DepartureTime)
+                    putExtra("TICKET_BUS_NUMBER", ticket.BusNo)
+                    putExtra("TICKET_PRICE", ticket.Price)
                 }
                 context.startActivity(intent)
             }
-        } else {
+        }else {
             holder.itemView.visibility = View.GONE
         }
     }
 
     private fun matchesFilter(ticket: BusTicket): Boolean {
-        return (fromStation == null || ticket.from == fromStation) &&
-                (toStation == null || ticket.to == toStation)
+        return (fromStation == null || ticket.From == fromStation) &&
+                (toStation == null || ticket.To == toStation)
     }
 
     override fun getItemCount() = busTickets.size

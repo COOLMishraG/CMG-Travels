@@ -40,8 +40,8 @@ class Bus : AppCompatActivity() {
         )
         allTickets = generateBusTickets()
         return allTickets.filter { ticket ->
-            ticket.from == from && ticket.to == to
-        }.sortedBy { it.departureTime }
+            ticket.From == from && ticket.To == to
+        }.sortedBy { it.DepartureTime }
     }
     fun generateBusTickets(): List<BusTicket> {
         val cities = listOf("Indore", "Bhopal", "Ujjain", "Sihor", "Sagar", "Gwalior", "Jabalpur", "Rewa", "Ratlam", "Chhindwara")

@@ -63,6 +63,8 @@ class ClickTicket : AppCompatActivity() {
         applyCustom(binding.tob)
         applyCustom(binding.n)
         applyCustom(binding.bn)
+        applyCustom(binding.paymentType)
+        applyCustom(binding.busType)
 
 
 
@@ -194,6 +196,8 @@ class ClickTicket : AppCompatActivity() {
             applyCustomStyle(binding.boardingTime, ticket.DepartureTime)
             applyCustomStyle(binding.arrivalTime, ticket.ArrivalTime)
             applyCustomStyle(binding.ticketDate, ticket.PNR)
+            applyCustomStyle(binding.paymentType ,payment_type.random())
+            applyCustomStyle(binding.busType,busType.random())
             applyCustomStyle(binding.passengerName, UserSession.user?.Name ?: "")
 
             binding.downloadTicketButton.setOnClickListener {
@@ -265,4 +269,6 @@ class ClickTicket : AppCompatActivity() {
         // Set text size
         textView.textSize = 16f // Set text size in sp
     }
+    private val payment_type = mutableListOf("UPI" , "Card" , "Cash" , "netbanking" , "wallet")
+    private val busType = mutableListOf("AC" , "AC+Sleeper" , "Sleeper" , "non-AC" , "2+1 sitting")
 }

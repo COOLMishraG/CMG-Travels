@@ -331,6 +331,7 @@
             android:backgroundTint="#6949DC"
             android:buttonTint="#1B2C63"
             android:checked="false"
+            android:paddingHorizontal="10dp"
             android:text="I confirm the booking details are correct"
             android:textColor="#0C1436"
             android:textColorHint="@color/SuperDarkBlue"

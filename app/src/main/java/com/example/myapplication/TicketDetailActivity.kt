@@ -56,7 +56,7 @@ class TicketDetailActivity : AppCompatActivity() {
             }else if(binding.checkboxDetailsRevised.isChecked == false){
                 Toast.makeText(this,"Please check the checkbox",Toast.LENGTH_SHORT).show()
             }else{
-                val currTicket = Ticket(PNRTEMP , currUser.Name , from , to!! , BusNumber!! , departureTime!! , arrivalTime , price )
+                val currTicket = Ticket(PNRTEMP , currUser.Name , from , to!! , BusNumber!! , departureTime!!, arrivalTime , price )
                 val apiService = RetrofitClient.instance.create(ApiService::class.java)
                 val give = apiService.createTicket(currUser.UserId,currTicket)
                 give.enqueue(object : Callback<Ticket> {
